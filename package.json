@@ -1,0 +1,33 @@
+{
+  "name": "promised-xhr",
+  "version": "0.1.0",
+  "description": "Promised XHR for browsers.",
+  "main": "index.js",
+  "dependencies": {
+    "rsvp": "^3.0.9"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/frikille/promised-xhr.git"
+  },
+  "keywords": [
+    "promise",
+    "xhr",
+    "browserify"
+  ],
+  "author": {
+    "name": "Peter Balazs"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/frikille/promised-xhr/issues"
+  },
+  "browser": {
+    "json": false
+  },
+  "readme": "",
+  "readmeFilename": "README.md",
+  "_id": "xhr-json@2.2.4",
+  "_from": "xhr-json@"
+}
