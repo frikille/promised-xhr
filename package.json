@@ -26,8 +26,10 @@
   "browser": {
     "json": false
   },
+  "files": [
+    "index.js",
+    "lib/"
+  ],
   "readme": "XHR with promises",
-  "readmeFilename": "readme.md",
-  "_id": "xhr-json@2.2.4",
-  "_from": "xhr-json@"
+  "readmeFilename": "readme.md"
 }
