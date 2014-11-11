@@ -72,6 +72,7 @@ var sendRequest = function (options) {
     client.onerror = reject;
 
     if (options.method != 'GET') {
+      client.setRequestHeader('Content-Type', 'application/json');
       client.send(options.data);
     } else {
       client.send();
