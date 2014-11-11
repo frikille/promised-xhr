@@ -32,6 +32,8 @@ var sendRequest = function (options) {
   var client = xhrObject();
   var url = options.url;
 
+  client.open(options.method || 'GET', url, true);
+
   if (options.credentials) {
     client.withCredentials = true;
   }
@@ -47,8 +49,6 @@ var sendRequest = function (options) {
   if (options.method == 'GET') {
     url += buildParamsAsQueryString(options.data);
   }
-
-  client.open(options.method || 'GET', url, true);
 
   return new Promise(function (resolve, reject){
     client.onreadystatechange = function () {
