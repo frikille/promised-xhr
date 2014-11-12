@@ -32,6 +32,10 @@ var sendRequest = function (options) {
   var client = xhrObject();
   var url = options.url;
 
+  if (options.method == 'GET') {
+    url += buildParamsAsQueryString(options.data);
+  }
+  
   client.open(options.method || 'GET', url, true);
 
   if (options.credentials) {
@@ -44,10 +48,6 @@ var sendRequest = function (options) {
         client.setRequestHeader(key, options.headers[key]);
       }
     }
-  }
-
-  if (options.method == 'GET') {
-    url += buildParamsAsQueryString(options.data);
   }
 
   return new Promise(function (resolve, reject){
