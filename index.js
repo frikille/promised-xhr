@@ -35,7 +35,7 @@ var sendRequest = function (options) {
   if (options.method == 'GET') {
     url += buildParamsAsQueryString(options.data);
   }
-  
+
   client.open(options.method || 'GET', url, true);
 
   if (options.credentials) {
@@ -126,7 +126,6 @@ module.exports = {
 
     if (options.jsonContent !== false && 'data' in options) {
       options.data = JSON.stringify(options.data);
-      options.headers['content-length'] = options.data.length;
       return sendRequest(options).then(parseJson, parseError);
     } else {
       return sendRequest(options);
@@ -143,7 +142,6 @@ module.exports = {
 
     if (options.jsonContent !== false && 'data' in options) {
       options.data = JSON.stringify(options.data);
-      options.headers['content-length'] = options.data.length;
       return sendRequest(options).then(parseJson, parseError);
     } else {
       return sendRequest(options);
