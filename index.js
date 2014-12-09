@@ -50,6 +50,42 @@ var sendRequest = function (options) {
     }
   }
 
+  if (options.fileUpload) {
+    return new Promise(function (resolve, reject){
+      client.onreadystatechange = function () {
+        if (client.readyState !== 4) return;
+
+        if (client.status < 400) {
+          setResponseObject({}, resolve);
+        } else {
+          setResponseObject(new Error('The server encountered an error with a status code ' + client.status), reject);
+        }
+
+        function setResponseObject (response, callback) {
+          response.status = client.status;
+          response.headers = parseHeaders(client.getAllResponseHeaders().split('\n'));
+          response.body = client.responseText
+
+          callback(response);
+        };
+      };
+
+      if (options.onUploadProgress) {
+        client.upload.onprogress = function(e) {
+          var percentLoaded;
+          if (e.lengthComputable) {
+            percentLoaded = Math.round((e.loaded / e.total) * 100);
+            return options.onProgress(percentLoaded, percentLoaded === 100 ? 'Finalizing.' : 'Uploading.');
+          }
+        };
+      }
+
+      client.onerror = reject;
+
+      client.send(options.file);
+    });
+  }
+
   return new Promise(function (resolve, reject){
     client.onreadystatechange = function () {
       if (client.readyState !== 4) return;
