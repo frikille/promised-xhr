@@ -75,7 +75,7 @@ var sendRequest = function (options) {
           var percentLoaded;
           if (e.lengthComputable) {
             percentLoaded = Math.round((e.loaded / e.total) * 100);
-            return options.onProgress(percentLoaded, percentLoaded === 100 ? 'Finalizing.' : 'Uploading.');
+            return options.onUploadProgress(percentLoaded, percentLoaded === 100 ? 'Finalizing.' : 'Uploading.');
           }
         };
       }
