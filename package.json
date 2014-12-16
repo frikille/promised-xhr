@@ -4,7 +4,7 @@
   "description": "Promised XHR for browsers.",
   "main": "index.js",
   "dependencies": {
-    "rsvp": "^3.0.9"
+    "rsvp": "3.0.9"
   },
   "devDependencies": {},
   "repository": {
