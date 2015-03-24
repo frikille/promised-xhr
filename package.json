@@ -30,7 +30,5 @@
   "files": [
     "index.js",
     "lib/"
-  ],
-  "readme": "XHR with promises",
-  "readmeFilename": "readme.md"
+  ]
 }
