@@ -19,13 +19,14 @@ var parseHeaders = function (headerStrings) {
     regexp = /^([^:]+): (.*)/;
 
   for (var i = 0, len = headerStrings.length; i < len; i++) {
-    if (match = headerStrings[i].match(regexp)) {
+    match = headerStrings[i].match(regexp);
+    if (match) {
       headers[match[1].toLowerCase()] = match[2];
     }
   }
 
   return headers;
-}
+};
 
 var sendRequest = function (options) {
 
@@ -64,10 +65,10 @@ var sendRequest = function (options) {
         function setResponseObject (response, callback) {
           response.status = client.status;
           response.headers = parseHeaders(client.getAllResponseHeaders().split('\n'));
-          response.body = client.responseText
+          response.body = client.responseText;
 
           callback(response);
-        };
+        }
       };
 
       if (options.onUploadProgress) {
@@ -99,10 +100,10 @@ var sendRequest = function (options) {
       function setResponseObject (response, callback) {
         response.status = client.status;
         response.headers = parseHeaders(client.getAllResponseHeaders().split('\n'));
-        response.body = client.responseText
+        response.body = client.responseText;
 
         callback(response);
-      };
+      }
     };
 
     client.onerror = reject;
@@ -183,4 +184,4 @@ module.exports = {
       return sendRequest(options);
     }
   }
-}
+};
