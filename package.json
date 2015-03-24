@@ -1,6 +1,6 @@
 {
   "name": "promised-xhr",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Promised XHR for browsers.",
   "main": "index.js",
   "dependencies": {
@@ -9,7 +9,7 @@
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git://github.com/frikille/promised-xhr.git"
+    "url": "https://github.com/frikille/promised-xhr"
   },
   "keywords": [
     "promise",
