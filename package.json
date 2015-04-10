@@ -6,7 +6,6 @@
   "dependencies": {
     "rsvp": "3.0.9"
   },
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "https://github.com/frikille/promised-xhr"
