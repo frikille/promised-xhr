@@ -36,7 +36,7 @@ XHR.send(url, options)
 ```javascript
   var XHR = require('promised-xhr');
 
-  XHR.get('/test-url', {
+  XHR.post('/test-url', {
     data: {
       param: 'value'
     },
@@ -57,7 +57,7 @@ XHR.send(url, options)
 ```javascript
   var XHR = require('promised-xhr');
 
-  XHR.get('/test-url', {
+  XHR.send('/test-url', {
     method: 'PUT',
     data: {
       param: 'value'
