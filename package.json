@@ -1,6 +1,6 @@
 {
   "name": "promised-xhr",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Promised XHR for browsers.",
   "main": "index.js",
   "dependencies": {
