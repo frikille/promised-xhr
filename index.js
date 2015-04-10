@@ -110,7 +110,7 @@ var sendRequest = function (options) {
 
     if (options.method != 'GET') {
       client.setRequestHeader('Content-Type', 'application/json');
-      client.send(options.data);
+      client.send(JSON.stringify(options.data));
     } else {
       client.send();
     }
@@ -162,7 +162,6 @@ module.exports = {
     options.method = 'POST';
 
     if (options.jsonContent !== false && 'data' in options) {
-      options.data = JSON.stringify(options.data);
       return sendRequest(options).then(parseJson, parseError);
     } else {
       return sendRequest(options);
@@ -178,7 +177,6 @@ module.exports = {
     }
 
     if (options.jsonContent !== false && 'data' in options) {
-      options.data = JSON.stringify(options.data);
       return sendRequest(options).then(parseJson, parseError);
     } else {
       return sendRequest(options);
