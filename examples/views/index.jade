@@ -1,0 +1,42 @@
+html
+  head
+    title!= title
+    script(src="/static/bundle.js")
+  
+  body
+    h1 Simple GET
+    div
+      button(onclick='getExample()') Call endpoint
+    
+    h1 Simple POST
+    div
+      button(onclick='postExample()') Call endpoint
+    
+    h1 Send with GET method
+    div
+      button(onclick='sendExampleWithGet()') Call endpoint
+    
+    h1 Send with POST method
+    div
+      button(onclick='sendExampleWithPost()') Call endpoint
+    
+    h1 Send with PUT method
+    div
+      button(onclick='sendExampleWithPut()') Call endpoint
+
+    h1 Single file upload
+    input(type="file" onchange="fileUpload(this)")
+
+    h1 Submit form with FormData
+    form(onsubmit="submitFormViaXHR(this);return false;")
+      div
+        label Name
+        input(name="name")
+      div
+        label Password
+        input(name="password" type="password")
+      div
+        label Selected files
+        input(type="file", multiple, name="selectedFiles")
+      div
+        input(type="submit", value="Submit form")
