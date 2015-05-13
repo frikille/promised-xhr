@@ -192,6 +192,7 @@ var parseError = function (response) {
 };
 
 module.exports = {
+  base: null,
   get : function (url, options) {
     options = options || {};
     options.headers = options.headers || {};
@@ -199,7 +200,7 @@ module.exports = {
     options.method = 'GET';
 
     if (typeof url === 'string') {
-      options.url = url;
+      options.url = this.base + url;
     }
 
     if (options.jsonContent !== false) {
@@ -214,7 +215,7 @@ module.exports = {
     options.headers = options.headers || {};
 
     if (typeof url === 'string') {
-      options.url = url;
+      options.url = this.base + url;
     }
 
     options.method = 'POST';
@@ -231,7 +232,7 @@ module.exports = {
     options.headers = options.headers || {};
 
     if (typeof url === 'string') {
-      options.url = url;
+      options.url = this.base + url;
     }
 
     if (options.jsonContent !== false && 'data' in options) {
@@ -247,7 +248,7 @@ module.exports = {
     options.headers = options.headers || {};
 
     if (typeof url === 'string') {
-      options.url = url;
+      options.url = this.base + url;
     }
 
     options.method = options.method || 'POST';
