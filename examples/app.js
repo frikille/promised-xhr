@@ -1,5 +1,6 @@
-var XHR = require('../index.js');
+var XHR  = require('../index.js');
 
+XHR.base = '//127.0.0.1'; // optional for external host
 var url = '/promised-xhr-endpoint';
 
 logResponse = function (response) {
